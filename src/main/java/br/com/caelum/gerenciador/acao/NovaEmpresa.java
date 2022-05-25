@@ -1,28 +1,22 @@
-package br.com.caelum.gerenciador.servlet;
+package br.com.caelum.gerenciador.acao;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@SuppressWarnings("unused")
-@WebServlet("/novaEmpresa")
-public class NovaEmpresaServlet extends HttpServlet {
+import br.com.caelum.gerenciador.modelo.Banco;
+import br.com.caelum.gerenciador.modelo.Empresa;
 
-	private static final long serialVersionUID = 1L;
+public class NovaEmpresa {
 
-	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		System.out.println("Cadastrando nova empresa");
+	public String executa(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+
+		System.out.println("Acao Cadastrando nova empresa");
 
 		String nomeEmpresa = request.getParameter("nome");
 		String paramDataEmpresa = request.getParameter("data");
@@ -45,12 +39,8 @@ public class NovaEmpresaServlet extends HttpServlet {
 		request.setAttribute("empresa", empresa.getNome());
 
 		// redirecionamento pelo navegador
-		response.sendRedirect("listaEmpresas");
+		return "redirect:entrada?acao=ListaEmpresa";
 
-//		// chamar o JSP
-//		RequestDispatcher rd = request.getRequestDispatcher("/listaEmpresas");
-//		request.setAttribute("empresa", empresa.getNome());
-//		rd.forward(request, response);
 
 	}
 
