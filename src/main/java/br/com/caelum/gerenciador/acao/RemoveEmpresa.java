@@ -8,8 +8,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import br.com.caelum.gerenciador.modelo.Banco;
 
-public class RemoveEmpresa {
+public class RemoveEmpresa implements Acao {
 	
+	@Override
 	public String executa(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		
 		System.out.println("acao removendo empresa");
@@ -22,7 +23,7 @@ public class RemoveEmpresa {
 		Banco banco = new Banco();
 		banco.removeEmpresa(id);
 		
-		return "redirect:entrada?acao=ListaEmpresa";
+		return "redirect:entrada?acao=ListaEmpresas";
 
 		
 	}

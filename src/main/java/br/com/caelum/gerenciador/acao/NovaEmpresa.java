@@ -12,8 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.caelum.gerenciador.modelo.Banco;
 import br.com.caelum.gerenciador.modelo.Empresa;
 
-public class NovaEmpresa {
+public class NovaEmpresa implements Acao{
 
+	@Override
 	public String executa(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
 		System.out.println("Acao Cadastrando nova empresa");
@@ -39,7 +40,7 @@ public class NovaEmpresa {
 		request.setAttribute("empresa", empresa.getNome());
 
 		// redirecionamento pelo navegador
-		return "redirect:entrada?acao=ListaEmpresa";
+		return "redirect:entrada?acao=ListaEmpresas";
 
 
 	}
