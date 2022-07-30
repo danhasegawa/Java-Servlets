@@ -16,5 +16,6 @@ In this project I learned:
 ## ✔️ Technologies used
 
 - ``Java ``
+- ``HTML``
 - ``Eclipse IDE``
 - ``Tomcat v9.0``
