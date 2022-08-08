@@ -2,7 +2,7 @@
 
 <h1><p align="center">
 <img src="https://img.shields.io/static/v1?label=STATUS&message=%20FINISHED&color=GREEN&style=for-the-badge"/>
-</p></h1?
+</p></h1>
 
 In this project I learned:
 - What is a Servlet.
